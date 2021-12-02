@@ -113,11 +113,31 @@ section{
 
     article{
         display:grid;
-        grid-template-columns:1fr 1fr 1fr;
+   grid-template-columns:1fr 1fr 1fr;
+   grid-template-areas:
+        "header header side"
+        "content content side" ;
     }
 
     h2{
+        grid-area:header;
+    }
+
+    section:first-of-type{
+        grid-area:content;
+    }
+    section:last-of-type{
+        grid-area:side;
+    }
+
+    /*
+    h2, section:first-of-type{
         grid-column: 1/span 2;
     }
+
+    section:last-of-type{
+        grid-column:3;
+        grid-row:1/span2;
+    } */
 }
 
